@@ -31,6 +31,8 @@
   <p ng-show="agregarForm.telefono.$error.required">Escriba el telefono</p>
   <p ng-show="agregarForm.email.$error.required">Escriba el email</p>
   
+ <p>{{statusMessage }}</p>
+ 
   </div>
   
  <button type="button" class="button icon-left ion-android-checkbox-outline button-positive" ng-disabled="agregaForm.$invalid" ng-click="guardar(persona)">
