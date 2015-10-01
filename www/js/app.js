@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'ngCordova','starter.controllers', 'starter.
     }
     
     
-  })
+  });
   
    db = $cordovaSQLite.openDB("practica2_agenda.db");
         $cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS agenda (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre varchar(255),apellido varchar(255),telefono varchar(255),email varchar(255))');
