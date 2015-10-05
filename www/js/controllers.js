@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope,$ionicPopup,$timeout) {
+.controller('DashCtrl', function($scope,$ionicPopup,$timeout,$cordovaSQLite) {
     $scope.showAlert = function() {
     var alertPopup = $ionicPopup.alert({
         title: 'Agenda' ,
@@ -35,7 +35,7 @@ $scope.guardar = function(persona){
 })
 
 
-.controller('ChatsCtrl', function($scope, Chats) {
+.controller('ChatsCtrl', function($scope, Chats,$cordovaSQLite) {
  
 
   $scope.chats = [];
@@ -47,8 +47,15 @@ $scope.guardar = function(persona){
                 function(result) {
 
                     if (result.rows.length > 0) {
+                         for(var i = 0; i < result.rows.lenght;i++)
+                         {
 
-                        $scope.chats = result.rows;
+                        $scope.chats.push({"nombre":result.rows.item(i).nombre,
+                                     "apellido":result.rows.item(i).apellido,
+                                      "telefono":result.rows.item(i).telefono,
+                                       "email":result.rows.item(i).email});
+                        }
+                        
                      }
                 },
                 function(error) {
