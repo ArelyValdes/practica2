@@ -47,7 +47,7 @@ $scope.guardar = function(persona){
                 function(result) {
 
                     if (result.rows.length > 0) {
-                         for(var i = 0; i < result.rows.lenght;i++)
+                         for(var i = 0; i < result.rows.lenght; i++)
                          {
 
                         $scope.chats.push({"nombre":result.rows.item(i).nombre,
