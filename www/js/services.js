@@ -47,7 +47,7 @@ remove: function(chat) {
 get: function(chatId) {
     chats = [];
     
-    $cordovaSQLite.execute(db, 'SELECT * FROM agenda where id = ?',[chatid])
+    $cordovaSQLite.execute(db, 'SELECT * FROM agenda where id = ?',[chatId])
     .then(function(result){
         
         if (result.rows.lenght > 0){
@@ -61,12 +61,14 @@ get: function(chatId) {
             
         
     }
-    return chats;
+   
    
     },
     function(error){
         statusMessage = "Error: " + error.message;
     });
+    
+     return chats;
     }
 
 };
