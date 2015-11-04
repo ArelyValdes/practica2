@@ -71,7 +71,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+  //alert($stateParams.chatId);
+  //alert(Chats.get($stateParams.chatId));
   $scope.chat = Chats.get($stateParams.chatId);
+  
 })
 
 .controller('AccountCtrl', function($scope) {
